@@ -38,7 +38,7 @@ data "aws_iam_policy_document" "sqs-allow-send_messages" {
     ]
 
     resources = [
-      "${var.notification_source_arns}",
+      "${aws_sqs_queue.this.0.arn}",
     ]
 
     principals = {
